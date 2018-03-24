@@ -84,6 +84,11 @@
 #include <boost/hof/alias.hpp>
 #include <boost/hof/decay.hpp>
 
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable: 4100)
+#endif
+
 namespace boost { namespace hof { namespace detail {
 
 template<class...>
@@ -419,5 +424,9 @@ struct unpack_sequence<detail::pack_base<T, Ts...>>
 };
 
 }} // namespace boost::hof
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 
 #endif

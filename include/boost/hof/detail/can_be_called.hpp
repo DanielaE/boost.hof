@@ -13,6 +13,11 @@
 #include <boost/hof/detail/holder.hpp>
 #include <boost/hof/detail/using.hpp>
 
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable: 4244)
+#endif
+
 namespace boost { namespace hof { namespace detail {
 
 #if BOOST_HOF_NO_EXPRESSION_SFINAE
@@ -117,5 +122,9 @@ BOOST_HOF_USING(can_be_called, can_be_called_impl<F, detail::callable_args<Ts...
 #endif
 
 }}} // namespace boost::hof
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 
 #endif

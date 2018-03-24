@@ -11,6 +11,11 @@
 #include <boost/hof/returns.hpp>
 #include <boost/hof/config.hpp>
 
+#ifdef _MSC_VER
+# pragma warning(push)
+# pragma warning(disable: 4244)
+#endif
+
 #if BOOST_HOF_HAS_MANUAL_DEDUCTION || BOOST_HOF_NO_EXPRESSION_SFINAE
 
 #include <boost/hof/detail/and.hpp>
@@ -49,6 +54,11 @@ struct result_of
 // using result_of = id_<decltype(std::declval<F>()(std::declval<typename Ts::type>()...))>;
 
 }} // namespace boost::hof
+
+#ifdef _MSC_VER
+# pragma warning(pop)
+#endif
+
 #endif
 
 #if BOOST_HOF_NO_EXPRESSION_SFINAE
