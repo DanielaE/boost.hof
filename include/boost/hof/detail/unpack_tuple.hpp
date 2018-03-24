@@ -8,6 +8,11 @@
 #ifndef BOOST_HOF_GUARD_UNPACK_TUPLE_HPP
 #define BOOST_HOF_GUARD_UNPACK_TUPLE_HPP
 
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable: 4100 4244)
+#endif
+
 #include <boost/hof/unpack_sequence.hpp>
 #include <boost/hof/returns.hpp>
 #include <boost/hof/detail/forward.hpp>
@@ -94,5 +99,9 @@ struct unpack_sequence<std::array<T, N>>
 {};
 
 }} // namespace boost::hof
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 
 #endif

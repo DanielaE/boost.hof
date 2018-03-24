@@ -61,7 +61,7 @@
 
 #ifdef _MSC_VER
 #pragma warning(push)
-#pragma warning(disable: 4003)
+#pragma warning(disable: 4003 4244)
 #endif
 
 #define BOOST_HOF_DETAIL_FOREACH_QUAL(m, data) \

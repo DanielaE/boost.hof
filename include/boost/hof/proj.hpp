@@ -90,6 +90,11 @@
 #include <boost/hof/detail/result_type.hpp>
 #include <boost/hof/apply_eval.hpp>
 
+#ifdef _MSC_VER
+# pragma warning(push)
+# pragma warning(disable: 4100)
+#endif
+
 namespace boost { namespace hof {
 
 namespace detail {
@@ -262,4 +267,9 @@ struct proj_adaptor<Projection, void> : detail::callable_base<Projection>
 BOOST_HOF_DECLARE_STATIC_VAR(proj, detail::make<proj_adaptor>);
 
 }} // namespace boost::hof
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
+
 #endif
